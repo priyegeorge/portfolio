@@ -1,90 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Priye | Personal Website</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Priye George | Personal Profile</title>
 
   <style>
 
-    /* THE WHOLE PAGE */
+    /* =========================
+       GENERAL PAGE
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #f7e8ff, #e8f0ff);
+      background: linear-gradient(135deg, #f7e8ff, #eef2ff);
       color: #333;
+      line-height: 1.7;
     }
 
 
-    /* TOP SECTION */
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
       background: linear-gradient(135deg, #7b2cbf, #4361ee);
       color: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 90px 20px;
     }
 
     header h1 {
-      font-size: 50px;
+      font-size: 55px;
       margin-bottom: 10px;
     }
 
     header p {
       font-size: 20px;
+      max-width: 650px;
+      margin: auto;
     }
 
 
-    /* GENERAL SECTIONS */
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 35px;
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    section h2 {
-      color: #7b2cbf;
-      font-size: 30px;
-    }
-
-
-    /* MY SKILLS */
-    .skills {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .skill {
-      background: #eee0ff;
+    nav a {
       color: #6a1bb1;
-      padding: 12px 20px;
-      border-radius: 30px;
+      text-decoration: none;
+      margin: 0 15px;
       font-weight: bold;
     }
 
-
-    /* WHAT I OFFER */
-    .offer {
-      background: linear-gradient(135deg, #fff0f7, #eee8ff);
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 15px;
-    }
-
-    .offer h3 {
+    nav a:hover {
       color: #4361ee;
     }
 
 
-    /* FOOTER */
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      max-width: 900px;
+      margin: 45px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    section h2 {
+      color: #7b2cbf;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+
+    /* =========================
+       ABOUT ME
+    ========================== */
+
+    .intro {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       WHAT I OFFER
+    ========================== */
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 220px;
+      padding: 25px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f5eaff, #eef1ff);
+    }
+
+    .card h3 {
+      color: #4361ee;
+      margin-bottom: 10px;
+    }
+
+
+    /* =========================
+       FAITH
+    ========================== */
+
+    .faith {
+      background: linear-gradient(135deg, #fff4fb, #f0eaff);
+      text-align: center;
+    }
+
+    .faith p {
+      font-size: 19px;
+    }
+
+
+    /* =========================
+       CONTACT BUTTON
+    ========================== */
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #7b2cbf, #4361ee);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .contact-button:hover {
+      opacity: 0.85;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer {
       text-align: center;
-      padding: 30px;
       background: #222;
       color: white;
-      margin-top: 50px;
+      padding: 30px;
+      margin-top: 60px;
+    }
+
+
+    /* =========================
+       MOBILE PHONE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 40px;
+      }
+
+      header p {
+        font-size: 17px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      section {
+        margin: 25px 15px;
+        padding: 25px;
+      }
+
     }
 
   </style>
@@ -93,91 +210,192 @@
 
 <body>
 
-  <!-- INTRODUCTION -->
-  <header>
-    <h1>Hello, I'm Priye 👋🏽</h1>
-    <p>Accounting Student • Aspiring Full-Stack Developer • Creative</p>
+
+  <!-- HEADER -->
+
+  <header id="home">
+
+    <h1>Priye George</h1>
+
+    <p>
+      Accounting Student • Aspiring Full-Stack Developer • Creative
+    </p>
+
   </header>
 
 
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <a href="#about">About</a>
+
+    <a href="#offer">What I Offer</a>
+
+    <a href="#faith">Faith</a>
+
+    <a href="#interests">Interests</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+
   <!-- WHO I AM -->
-  <section>
-    <h2>Who I Am 👩🏽‍💻</h2>
 
-    <p>
-      I am Priye, an accounting student who is also exploring
-      technology, creativity and web development.
+  <section id="about">
+
+    <h2>Who I Am 👋🏽</h2>
+
+    <p class="intro">
+
+      My name is Priye George. I am an Accounting student with
+      a growing passion for technology, creativity and personal
+      development.
+
     </p>
 
-    <p>
-      I am currently learning how to build websites and software
-      from scratch, with the goal of becoming a full-stack developer.
+    <p class="intro">
+
+      I enjoy learning new things, exploring ideas and developing
+      skills that can be useful both personally and professionally.
+
     </p>
+
+    <p class="intro">
+
+      I am also an aspiring full-stack developer, interested in
+      using technology to create useful and meaningful digital
+      experiences.
+
+    </p>
+
   </section>
 
 
   <!-- WHAT I OFFER -->
-  <section>
+
+  <section id="offer">
+
     <h2>What I Offer ✨</h2>
 
-    <div class="offer">
-      <h3>💻 Web Development</h3>
-      <p>
-        I am learning to create beautiful and functional websites
-        using HTML, CSS and JavaScript.
-      </p>
-    </div>
+    <div class="cards">
 
-    <div class="offer">
-      <h3>📊 Accounting Knowledge</h3>
-      <p>
-        I am studying accounting and developing an understanding
-        of financial and business concepts.
-      </p>
-    </div>
+      <div class="card">
 
-    <div class="offer">
-      <h3>🎨 Creativity</h3>
-      <p>
-        I enjoy exploring creative ideas and finding interesting
-        ways to present information.
-      </p>
+        <h3>📊 Accounting</h3>
+
+        <p>
+          Knowledge and skills in accounting and
+          business-related areas.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>💻 Technology</h3>
+
+        <p>
+          A growing ability to create websites and
+          explore digital solutions.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>🎨 Creativity</h3>
+
+        <p>
+          Creative ideas and a willingness to explore
+          new ways of presenting and communicating.
+        </p>
+
+      </div>
+
     </div>
 
   </section>
 
 
-  <!-- MY SKILLS -->
-  <section>
-    <h2>What I'm Learning 🚀</h2>
+  <!-- FAITH -->
 
-    <div class="skills">
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">UI/UX</div>
-      <div class="skill">Accounting</div>
-    </div>
+  <section id="faith" class="faith">
+
+    <h2>My Faith ❤️</h2>
+
+    <p>
+
+      My relationship with God is an important part of who I am.
+      My faith influences my values, the way I approach life and
+      the person I continue to become.
+
+    </p>
 
   </section>
 
 
-  <!-- MY HOBBIES -->
-  <section>
-    <h2>My Hobbies 🎧</h2>
+  <!-- INTERESTS -->
+
+  <section id="interests">
+
+    <h2>Things I Enjoy 🌱</h2>
 
     <ul>
-      <li>Coding</li>
+
+      <li>Learning new skills</li>
+
+      <li>Technology and creativity</li>
+
       <li>Reading</li>
+
       <li>Listening to music</li>
+
+      <li>Meaningful conversations</li>
+
+      <li>Personal growth</li>
+
     </ul>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2>Let's Connect 📩</h2>
+
+    <p>
+
+      I'd love to connect with people, learn from others and
+      explore opportunities to grow and create.
+
+    </p>
+
+    <a
+      class="contact-button"
+      href="mailto:priyegeorge334@gmail.com"
+    >
+      Email Me
+    </a>
+
   </section>
 
 
   <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 Priye. Built while learning to code. 💜</p>
+
+    <p>
+      © 2026 Priye George. All rights reserved.
+    </p>
+
   </footer>
+
 
 </body>
 
