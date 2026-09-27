@@ -6,13 +6,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Priye George | Personal Profile</title>
+  <meta
+    name="description"
+    content="The personal portfolio of Priye George — Accounting student, aspiring full-stack developer and creative."
+  >
+
+  <title>Priye George | Personal Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
 
   <style>
 
-    /* =========================
+    /* ==============================
        GENERAL PAGE
-    ========================== */
+    ============================== */
 
     * {
       box-sizing: border-box;
@@ -20,213 +36,770 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f7e8ff, #eef2ff);
-      color: #333;
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(196, 108, 255, 0.28), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(67, 97, 238, 0.25), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(244, 114, 182, 0.18), transparent 30%),
+        #f8f5ff;
+
+      color: #25213a;
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      transition: 0.3s ease;
     }
 
 
-    /* =========================
-       HEADER
-    ========================== */
+    /* ==============================
+       HERO / HEADER
+    ============================== */
 
     header {
-      background: linear-gradient(135deg, #7b2cbf, #4361ee);
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.18), transparent 18%),
+        radial-gradient(circle at 85% 30%, rgba(255,255,255,0.12), transparent 20%),
+        linear-gradient(135deg, #24104f, #5b21b6 48%, #4338ca);
+
       color: white;
+
+      padding: 85px 20px 100px;
+
       text-align: center;
-      padding: 90px 20px;
     }
 
+
+    /* Decorative glowing circles */
+
+    header::before {
+      content: "";
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      border-radius: 50%;
+
+      top: -100px;
+      left: -80px;
+
+      filter: blur(2px);
+    }
+
+    header::after {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      background: rgba(236, 72, 153, 0.12);
+
+      border-radius: 50%;
+
+      bottom: -160px;
+      right: -100px;
+
+      filter: blur(5px);
+    }
+
+
+    .profile {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 30px;
+
+      max-width: 850px;
+
+      margin: auto;
+
+      text-align: left;
+    }
+
+
+    /* ==============================
+       PROFILE IMAGE
+    ============================== */
+
+    .profile img {
+      width: 155px;
+      height: 155px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 6px solid rgba(255, 255, 255, 0.95);
+
+      box-shadow:
+        0 0 0 8px rgba(255, 255, 255, 0.08),
+        0 15px 45px rgba(0, 0, 0, 0.28);
+
+      flex-shrink: 0;
+    }
+
+
+    /* ==============================
+       HERO TEXT
+    ============================== */
+
     header h1 {
-      font-size: 55px;
-      margin-bottom: 10px;
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(45px, 7vw, 72px);
+
+      line-height: 1.1;
+
+      margin-bottom: 12px;
+
+      letter-spacing: -1px;
     }
 
     header p {
-      font-size: 20px;
-      max-width: 650px;
-      margin: auto;
+      font-size: 18px;
+
+      color: rgba(255, 255, 255, 0.9);
+
+      max-width: 600px;
     }
 
 
-    /* =========================
+    .hero-description {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 650px;
+
+      margin: 45px auto 0;
+
+      font-size: 17px;
+
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+
+    /* ==============================
        NAVIGATION
-    ========================== */
+    ============================== */
 
     nav {
-      background: white;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
       position: sticky;
-      top: 0;
+
+      top: 12px;
+
       z-index: 1000;
+
+      width: min(92%, 900px);
+
+      margin: -32px auto 0;
+
+      padding: 15px 20px;
+
+      background: rgba(255, 255, 255, 0.88);
+
+      backdrop-filter: blur(15px);
+
+      -webkit-backdrop-filter: blur(15px);
+
+      border: 1px solid rgba(255, 255, 255, 0.7);
+
+      border-radius: 50px;
+
+      box-shadow: 0 12px 35px rgba(48, 30, 87, 0.12);
+
+      text-align: center;
     }
 
     nav a {
-      color: #6a1bb1;
+      display: inline-block;
+
+      color: #5420a6;
+
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+
+      margin: 0 12px;
+
+      font-size: 14px;
+
+      font-weight: 700;
     }
 
     nav a:hover {
-      color: #4361ee;
+      color: #db2777;
+
+      transform: translateY(-2px);
     }
 
 
-    /* =========================
+    /* ==============================
+       MAIN CONTENT
+    ============================== */
+
+    main {
+      position: relative;
+
+      padding: 25px 0 50px;
+    }
+
+
+    /* ==============================
        SECTIONS
-    ========================== */
+    ============================== */
 
     section {
-      max-width: 900px;
-      margin: 45px auto;
-      padding: 40px;
-      background: white;
-      border-radius: 22px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+
+      max-width: 950px;
+
+      margin: 55px auto;
+
+      padding: 50px;
+
+      background: rgba(255, 255, 255, 0.88);
+
+      backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
+      border-radius: 28px;
+
+      box-shadow:
+        0 18px 50px rgba(56, 32, 105, 0.10);
     }
+
 
     section h2 {
-      color: #7b2cbf;
-      font-size: 32px;
-      margin-bottom: 20px;
+      font-family: "Playfair Display", serif;
+
+      color: #5420a6;
+
+      font-size: clamp(30px, 5vw, 42px);
+
+      margin-bottom: 22px;
     }
 
 
-    /* =========================
-       ABOUT ME
-    ========================== */
+    /* Small heading decoration */
+
+    section h2::after {
+      content: "";
+
+      display: block;
+
+      width: 55px;
+      height: 4px;
+
+      margin-top: 10px;
+
+      border-radius: 20px;
+
+      background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+      );
+    }
+
+
+    /* ==============================
+       ABOUT
+    ============================== */
 
     .intro {
-      font-size: 18px;
+      font-size: 17px;
+
+      color: #514b65;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* ==============================
+       WHAT I OFFER
+    ============================== */
+
+    #offer {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,0.95),
+          rgba(246,241,255,0.95)
+        );
+    }
+
+    .cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+
+      margin-top: 30px;
+    }
+
+
+    .card {
+      position: relative;
+
+      padding: 30px 25px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #f8f2ff,
+          #eef2ff
+        );
+
+      border: 1px solid rgba(124, 58, 237, 0.08);
+
+      box-shadow:
+        0 10px 25px rgba(75, 40, 130, 0.07);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 18px 35px rgba(75, 40, 130, 0.14);
+    }
+
+
+    .card:nth-child(2) {
+      background:
+        linear-gradient(
+          145deg,
+          #eef2ff,
+          #f0eaff
+        );
+    }
+
+
+    .card:nth-child(3) {
+      background:
+        linear-gradient(
+          145deg,
+          #fff0f7,
+          #f6edff
+        );
+    }
+
+
+    .card-icon {
+      font-size: 35px;
+
       margin-bottom: 15px;
     }
 
 
-    /* =========================
-       WHAT I OFFER
-    ========================== */
-
-    .cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      flex: 1;
-      min-width: 220px;
-      padding: 25px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #f5eaff, #eef1ff);
-    }
-
     .card h3 {
-      color: #4361ee;
+      color: #5420a6;
+
+      font-size: 20px;
+
       margin-bottom: 10px;
     }
 
 
-    /* =========================
+    .card p {
+      color: #5d5870;
+
+      font-size: 15px;
+    }
+
+
+    /* ==============================
        FAITH
-    ========================== */
+    ============================== */
 
     .faith {
-      background: linear-gradient(135deg, #fff4fb, #f0eaff);
+      overflow: hidden;
+
       text-align: center;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,0.15),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          135deg,
+          #4c1d95,
+          #7c3aed,
+          #be185d
+        );
     }
+
+
+    .faith h2 {
+      color: white;
+    }
+
+
+    .faith h2::after {
+      margin-left: auto;
+      margin-right: auto;
+
+      background: white;
+    }
+
 
     .faith p {
+      max-width: 720px;
+
+      margin: auto;
+
       font-size: 19px;
+
+      color: rgba(255,255,255,0.92);
     }
 
 
-    /* =========================
-       CONTACT BUTTON
-    ========================== */
+    /* ==============================
+       INTERESTS
+    ============================== */
+
+    .interest-list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      list-style: none;
+
+      margin-top: 25px;
+    }
+
+
+    .interest-list li {
+      padding: 12px 18px;
+
+      border-radius: 30px;
+
+      background: linear-gradient(
+        135deg,
+        #f1e8ff,
+        #eef2ff
+      );
+
+      color: #5420a6;
+
+      font-weight: 600;
+
+      font-size: 14px;
+
+      border: 1px solid rgba(124, 58, 237, 0.08);
+
+      transition: 0.3s ease;
+    }
+
+
+    .interest-list li:hover {
+      transform: translateY(-3px);
+
+      background: linear-gradient(
+        135deg,
+        #e9d5ff,
+        #dbeafe
+      );
+    }
+
+
+    /* ==============================
+       CONTACT
+    ============================== */
+
+    #contact {
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #f6efff
+        );
+    }
+
+
+    #contact h2::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    #contact p {
+      max-width: 650px;
+
+      margin: auto;
+
+      color: #5d5870;
+    }
+
 
     .contact-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, #7b2cbf, #4361ee);
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-top: 28px;
+
+      padding: 15px 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #7c3aed,
+          #db2777
+        );
+
       color: white;
+
       text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
+
+      border-radius: 50px;
+
+      font-weight: 700;
+
+      box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.25);
+
+      transition: 0.3s ease;
     }
+
 
     .contact-button:hover {
-      opacity: 0.85;
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 15px 30px rgba(124, 58, 237, 0.35);
     }
 
 
-    /* =========================
+    /* ==============================
        FOOTER
-    ========================== */
+    ============================== */
 
     footer {
       text-align: center;
-      background: #222;
-      color: white;
-      padding: 30px;
-      margin-top: 60px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1f1238,
+          #28104f
+        );
+
+      color: rgba(255,255,255,0.8);
+
+      padding: 35px 20px;
+
+      margin-top: 70px;
     }
 
 
-    /* =========================
-       MOBILE PHONE
-    ========================== */
+    footer strong {
+      display: block;
 
-    @media (max-width: 600px) {
+      color: white;
 
-      header h1 {
-        font-size: 40px;
+      font-family: "Playfair Display", serif;
+
+      font-size: 22px;
+
+      margin-bottom: 5px;
+    }
+
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 65px 20px 80px;
       }
 
+
+      .profile {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+      }
+
+
+      .profile img {
+        width: 135px;
+        height: 135px;
+      }
+
+
       header p {
+        font-size: 16px;
+      }
+
+
+      .hero-description {
+        font-size: 15px;
+
+        margin-top: 30px;
+      }
+
+
+      nav {
+        width: 94%;
+
+        border-radius: 22px;
+
+        padding: 12px 8px;
+      }
+
+
+      nav a {
+        margin: 5px 7px;
+
+        font-size: 13px;
+      }
+
+
+      section {
+        margin: 35px 15px;
+
+        padding: 32px 24px;
+
+        border-radius: 23px;
+      }
+
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+
+      .card {
+        padding: 25px;
+      }
+
+
+      .faith p {
         font-size: 17px;
       }
 
-      nav a {
-        margin: 0 7px;
-        font-size: 14px;
+    }
+
+
+    /* ==============================
+       VERY SMALL PHONES
+    ============================== */
+
+    @media (max-width: 400px) {
+
+      header h1 {
+        font-size: 42px;
       }
 
+
+      nav a {
+        margin: 4px;
+
+        font-size: 12px;
+      }
+
+
       section {
-        margin: 25px 15px;
-        padding: 25px;
+        padding: 28px 20px;
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- HEADER -->
+  <!-- ==============================
+       HERO
+  ============================== -->
 
   <header id="home">
 
-    <h1>Priye George</h1>
+    <div class="profile">
 
-    <p>
-      Accounting Student • Aspiring Full-Stack Developer • Creative
+      <img
+        src="IMG-20260826-WA0085(1).jpg"
+        alt="Priye George"
+      >
+
+      <div>
+
+        <h1>Priye George</h1>
+
+        <p>
+          Accounting Student • Aspiring Full-Stack Developer • Creative
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <p class="hero-description">
+
+      I love learning, creating and exploring new possibilities
+      while growing into the person I am becoming.
+
     </p>
 
   </header>
 
 
-  <!-- NAVIGATION -->
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
 
   <nav>
+
+    <a href="#home">Home</a>
 
     <a href="#about">About</a>
 
@@ -241,154 +814,200 @@
   </nav>
 
 
-  <!-- WHO I AM -->
-
-  <section id="about">
-
-    <h2>Who I Am 👋🏽</h2>
-
-    <p class="intro">
-
-      My name is Priye George. I am an Accounting student with
-      a growing passion for technology, creativity and personal
-      development.
-
-    </p>
-
-    <p class="intro">
-
-      I enjoy learning new things, exploring ideas and developing
-      skills that can be useful both personally and professionally.
-
-    </p>
-
-    <p class="intro">
-
-      I am also an aspiring full-stack developer, interested in
-      using technology to create useful and meaningful digital
-      experiences.
-
-    </p>
-
-  </section>
+  <main>
 
 
-  <!-- WHAT I OFFER -->
+    <!-- ==============================
+         WHO I AM
+    ============================== -->
 
-  <section id="offer">
+    <section id="about">
 
-    <h2>What I Offer ✨</h2>
+      <h2>Who I Am 👋🏽</h2>
 
-    <div class="cards">
+      <p class="intro">
 
-      <div class="card">
+        My name is Priye George. I am an Accounting student
+        with a growing passion for technology, creativity
+        and personal development.
 
-        <h3>📊 Accounting</h3>
+      </p>
 
-        <p>
-          Knowledge and skills in accounting and
-          business-related areas.
-        </p>
+      <p class="intro">
+
+        I enjoy learning new things, exploring ideas and
+        developing skills that can be useful both personally
+        and professionally.
+
+      </p>
+
+      <p class="intro">
+
+        I am also an aspiring full-stack developer, interested
+        in using technology to create useful and meaningful
+        digital experiences.
+
+      </p>
+
+    </section>
+
+
+    <!-- ==============================
+         WHAT I OFFER
+    ============================== -->
+
+    <section id="offer">
+
+      <h2>What I Offer ✨</h2>
+
+
+      <div class="cards">
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            📊
+          </div>
+
+          <h3>Accounting</h3>
+
+          <p>
+            Knowledge and skills in accounting and
+            business-related areas.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            💻
+          </div>
+
+          <h3>Technology</h3>
+
+          <p>
+            A growing ability to create websites and
+            explore digital solutions.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            🎨
+          </div>
+
+          <h3>Creativity</h3>
+
+          <p>
+            Creative ideas and a willingness to explore
+            new ways of presenting and communicating.
+          </p>
+
+        </div>
+
 
       </div>
 
-
-      <div class="card">
-
-        <h3>💻 Technology</h3>
-
-        <p>
-          A growing ability to create websites and
-          explore digital solutions.
-        </p>
-
-      </div>
+    </section>
 
 
-      <div class="card">
+    <!-- ==============================
+         FAITH
+    ============================== -->
 
-        <h3>🎨 Creativity</h3>
+    <section id="faith" class="faith">
 
-        <p>
-          Creative ideas and a willingness to explore
-          new ways of presenting and communicating.
-        </p>
+      <h2>My Faith ❤️</h2>
 
-      </div>
+      <p>
 
-    </div>
+        My relationship with God is an important part of
+        who I am. My faith influences my values, the way
+        I approach life and the person I continue to become.
 
-  </section>
+      </p>
 
-
-  <!-- FAITH -->
-
-  <section id="faith" class="faith">
-
-    <h2>My Faith ❤️</h2>
-
-    <p>
-
-      My relationship with God is an important part of who I am.
-      My faith influences my values, the way I approach life and
-      the person I continue to become.
-
-    </p>
-
-  </section>
+    </section>
 
 
-  <!-- INTERESTS -->
+    <!-- ==============================
+         INTERESTS
+    ============================== -->
 
-  <section id="interests">
+    <section id="interests">
 
-    <h2>Things I Enjoy 🌱</h2>
-
-    <ul>
-
-      <li>Learning new skills</li>
-
-      <li>Technology and creativity</li>
-
-      <li>Reading</li>
-
-      <li>Listening to music</li>
-
-      <li>Meaningful conversations</li>
-
-      <li>Personal growth</li>
-
-    </ul>
-
-  </section>
+      <h2>Things I Enjoy 🌱</h2>
 
 
-  <!-- CONTACT -->
+      <ul class="interest-list">
 
-  <section id="contact">
+        <li>📚 Learning new skills</li>
 
-    <h2>Let's Connect 📩</h2>
+        <li>💻 Technology</li>
 
-    <p>
+        <li>🎨 Creativity</li>
 
-      I'd love to connect with people, learn from others and
-      explore opportunities to grow and create.
+        <li>📖 Reading</li>
 
-    </p>
+        <li>🎵 Listening to music</li>
 
-    <a
-      class="contact-button"
-      href="mailto:priyegeorge334@gmail.com"
-    >
-      Email Me
-    </a>
+        <li>💬 Meaningful conversations</li>
 
-  </section>
+        <li>🌱 Personal growth</li>
+
+      </ul>
+
+    </section>
 
 
-  <!-- FOOTER -->
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section id="contact">
+
+      <h2>Let's Connect 📩</h2>
+
+      <p>
+
+        I'd love to connect with people, learn from others
+        and explore opportunities to grow and create.
+
+      </p>
+
+
+      <a
+        class="contact-button"
+        href="mailto:priyegeorge334@gmail.com"
+      >
+
+        ✉️ Email Me
+
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
 
   <footer>
+
+    <strong>Priye George</strong>
+
+    <p>
+      Accounting • Technology • Creativity
+    </p>
 
     <p>
       © 2026 Priye George. All rights reserved.
@@ -399,4 +1018,4 @@
 
 </body>
 
-</html>
+  </html>
